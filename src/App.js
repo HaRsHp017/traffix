@@ -141,11 +141,69 @@ function App() {
       <main>
         <Hero />
         <Features />
+        <Challenges />
         <Technology />
       </main>
       <Footer />
     </div>
   );
 }
+
+const Challenges = () => (
+  <section id="challenges" className="challenges">
+    <div className="container">
+      <div className="section-title">
+        <h3>Tackling Urban Gridlock Head-On</h3>
+        <p>
+          From frustrating delays to environmental impact, we're solving the
+          core issues of modern traffic.
+        </p>
+      </div>
+      <div className="challenges-grid">
+        <div className="challenge-card">
+          <div className="challenge-header">
+            <h4>The Challenge: Peak Hour Congestion</h4>
+          </div>
+          <div className="solution-header">
+            <h4>Our Solution: Predictive Signal Timing</h4>
+          </div>
+          <p>
+            Our AI analyzes traffic flow in real-time to dynamically adjust
+            signal phases, dissolving bottlenecks before they form and reducing
+            average commute times.
+          </p>
+        </div>
+
+        <div className="challenge-card">
+          <div className="challenge-header">
+            <h4>The Challenge: Increased Emissions</h4>
+          </div>
+          <div className="solution-header">
+            <h4>Our Solution: Minimized Vehicle Idling</h4>
+          </div>
+          <p>
+            By creating a smoother traffic flow with fewer stops, AI
+            TrafficSense directly cuts down on fuel consumption and harmful
+            emissions from idling vehicles.
+          </p>
+        </div>
+
+        <div className="challenge-card">
+          <div className="challenge-header">
+            <h4>The Challenge: Emergency Response Delays</h4>
+          </div>
+          <div className="solution-header">
+            <h4>Our Solution: Dynamic Green Corridors</h4>
+          </div>
+          <p>
+            The system can create prioritized green-light pathways for emergency
+            vehicles, clearing traffic ahead and drastically reducing response
+            times when seconds matter most.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+);
 
 export default App;

@@ -1,16 +1,16 @@
 /* Import the new font from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
 
-/* === NEW VIBRANT COLOR PALETTE & VARIABLES === */
+/* === VIBRANT COLOR PALETTE & VARIABLES === */
 :root {
-  --background-dark: #0D1117; /* A deeper, richer black */
-  --background-light: #161B22; /* Contrasting panel color */
+  --background-dark: #0D1117;
+  --background-light: #161B22;
   --text-primary: #E6EDF3;
   --text-secondary: #8B949E;
-  --accent-primary: #58A6FF; /* A vibrant, electric blue */
-  --accent-secondary: #C975FF; /* A vibrant purple */
+  --accent-primary: #58A6FF;
+  --accent-secondary: #C975FF;
   --border-color: #30363D;
-  --font-main: 'Poppins', -apple-system, BlinkMacSystem-Font, 'Segoe UI', Roboto, sans-serif;
+  --font-main: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 body {
@@ -33,7 +33,7 @@ body {
 h1, h2, h3, h4 {
   color: var(--text-primary);
   margin-top: 0;
-  font-weight: 700; /* Bolder headings */
+  font-weight: 700;
 }
 
 p {
@@ -42,7 +42,7 @@ p {
 
 /* === HEADER === */
 .header {
-  background-color: rgba(13, 17, 23, 0.8); /* Semi-transparent background */
+  background-color: rgba(13, 17, 23, 0.8);
   border-bottom: 1px solid var(--border-color);
   padding: 1rem 0;
   position: sticky;
@@ -63,10 +63,9 @@ p {
   gap: 0.75rem;
 }
 
-/* Update the SVG logo to use the new accent color */
 .logo svg path, .logo svg line {
   stroke: var(--accent-primary);
-  stroke-width: 2.5; /* Slightly thicker for more presence */
+  stroke-width: 2.5;
 }
 
 .logo h1 {
@@ -89,7 +88,6 @@ nav a:hover {
   color: var(--accent-primary);
 }
 
-/* Underline effect on hover */
 nav a::after {
     content: '';
     position: absolute;
@@ -116,15 +114,11 @@ nav a:hover::after {
 }
 
 .hero h2 {
-  font-size: 3.5rem; /* Larger and bolder */
+  font-size: 3.5rem;
   font-weight: 800;
   max-width: 800px;
   margin: 0 auto 1rem auto;
   line-height: 1.2;
-}
-
-/* Gradient text effect for the main headline */
-.hero h2 {
   background: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary), #ffffff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -145,7 +139,6 @@ nav a:hover::after {
     font-weight: 600;
 }
 
-/* New vibrant, gradient button */
 .cta-button {
   border: none;
   padding: 0.85rem 2.5rem;
@@ -162,16 +155,19 @@ nav a:hover::after {
 }
 
 .cta-button:hover {
-  background-position: right center; /* change the direction of the change here */
+  background-position: right center;
   transform: translateY(-3px) scale(1.02);
   box-shadow: 0 10px 20px 0 rgba(201, 117, 255, 0.4);
 }
 
-/* === FEATURES & TECHNOLOGY SECTIONS === */
-.features, .technology {
+/* === FEATURES, TECHNOLOGY, CHALLENGES SECTIONS === */
+.features, .technology, .challenges {
   padding: 5rem 0;
-  background-color: #0D1117;
   border-top: 1px solid var(--border-color);
+}
+
+.challenges {
+  background-color: var(--background-light);
 }
 
 .section-title {
@@ -214,6 +210,60 @@ nav a:hover::after {
   color: var(--accent-primary);
 }
 
+/* === CHALLENGES SECTION STYLING === */
+.challenges-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.challenge-card {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--background-dark);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.challenge-card:hover {
+  transform: translateY(-5px) scale(1.01);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.challenge-header, .solution-header {
+  padding: 0.75rem 1.5rem;
+}
+
+.challenge-header {
+  background-color: #33415520;
+}
+
+.solution-header {
+  background-image: linear-gradient(to right, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+}
+
+.challenge-card h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.challenge-card .solution-header h4 {
+  color: #fff;
+}
+
+.challenge-card p {
+  padding: 1.5rem;
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* === TECHNOLOGY SECTION === */
 .tech-logos {
     display: flex;
     justify-content: center;
@@ -264,13 +314,19 @@ nav a:hover::after {
   .hero h2 {
     font-size: 2.8rem;
   }
-
   .header .container {
     flex-direction: column;
     gap: 1rem;
   }
-  
   nav a {
       margin: 0 0.75rem;
+  }
+}
+
+/* THIS IS THE CRITICAL PART FOR THE CHALLENGES SECTION */
+@media (min-width: 992px) {
+  .challenges-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on desktop */
+    max-width: 1100px; /* Allow the grid to take up more space */
   }
 }
